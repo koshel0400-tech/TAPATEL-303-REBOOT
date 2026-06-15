@@ -36,13 +36,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
         @keyframes gradientAnimation { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-        
-        /* Исправление области и темы в Fullscreen режиме */
-        :-webkit-full-screen .game-header { padding-top: 12px !important; }
-        :-ms-fullscreen .game-header { padding-top: 12px !important; }
-        :fullscreen .game-header {
-            padding-top: 12px !important;
-        }
 
         /* HEADER С ДОРАБОТАННЫМИ ОТСТУПАМИ */
         .game-header {
@@ -87,11 +80,6 @@
             background: linear-gradient(135deg, #e91e63, #9c27b0); border: var(--border-width) solid var(--text-dark); box-shadow: 0 4px 0 var(--text-dark);
             display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1001; overflow: hidden;
             -webkit-tap-highlight-color: transparent;
-        }
-        :-webkit-full-screen .account-button { top: 14px !important; }
-        :-ms-fullscreen .account-button { top: 14px !important; }
-        :fullscreen .account-button {
-            top: 14px !important;
         }
         .account-button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--text-dark); }
         .account-button img { width: 100%; height: 100%; object-fit: cover; }
@@ -147,10 +135,10 @@
         .avatar-preview .preview-text { color: white; font-size: 36px; font-weight: bold; }
         
         /* УНИВЕРСАЛЬНЫЙ ДИЗАЙН КНОПОК */
-        .avatar-upload-btn, .promo-button, .audio-play-btn, .audio-pause-btn, .audio-stop-btn, .volume-btn, .scale-btn, .music-upload-btn, .image-upload-btn, .fullscreen-toggle-btn, .music-remove-btn, .image-remove-btn, .account-action-btn, .reset-btn, .close-account, .settings-mobile-close, .ad-button, .gamemode-btn, .select-dropdown, .tap-sound-upload-btn, .tap-sound-remove-btn {
+        .avatar-upload-btn, .promo-button, .audio-play-btn, .audio-pause-btn, .audio-stop-btn, .volume-btn, .scale-btn, .music-upload-btn, .image-upload-btn, .music-remove-btn, .image-remove-btn, .account-action-btn, .reset-btn, .close-account, .settings-mobile-close, .ad-button, .select-dropdown, .tap-sound-upload-btn, .tap-sound-remove-btn {
             background-color: var(--accent-orange); color: var(--text-dark); border: var(--border-width) solid var(--text-dark); border-radius: 16px; padding: 12px 20px; font-size: 0.95rem; font-weight: 900; cursor: pointer; transition: background-color 0.3s, transform 0.05s, box-shadow 0.05s; box-shadow: 0 4px 0 var(--text-dark); display: inline-flex; align-items: center; gap: 8px; justify-content: center; text-transform: uppercase; -webkit-tap-highlight-color: transparent;
         }
-        .avatar-upload-btn:active, .promo-button:active, .music-upload-btn:active, .image-upload-btn:active, .account-action-btn:active, .reset-btn:active, .close-account:active, .settings-mobile-close:active, .ad-button:active, .gamemode-btn:active, .select-dropdown:active, .tap-sound-upload-btn:active, .tap-sound-remove-btn:active, .fullscreen-toggle-btn:active { transform: translateY(4px); box-shadow: 0 0px 0 var(--text-dark); }
+        .avatar-upload-btn:active, .promo-button:active, .music-upload-btn:active, .image-upload-btn:active, .account-action-btn:active, .reset-btn:active, .close-account:active, .settings-mobile-close:active, .ad-button:active, .select-dropdown:active, .tap-sound-upload-btn:active, .tap-sound-remove-btn:active { transform: translateY(4px); box-shadow: 0 0px 0 var(--text-dark); }
         
         .login-btn { background: linear-gradient(135deg, #a8ff78, #78ffd6); }
         .register-btn { background: linear-gradient(135deg, #00c6ff, #0072ff); color: white; }
@@ -190,10 +178,6 @@
         
         .jump { animation: jumpAnimation 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         @keyframes jumpAnimation { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08) translateY(-4px); } }
-        
-        .gamemodes-bar { display: flex; gap: 8px; width: 100%; justify-content: center; margin-bottom: 8px; }
-        .gamemode-btn { padding: 8px 12px; font-size: 0.8rem; background-color: rgba(255, 255, 255, 0.35); backdrop-filter: blur(5px); }
-        .gamemode-btn.active { background: linear-gradient(135deg, var(--premium-gold), #ffb300) !important; border-color: var(--text-dark); color: var(--text-dark) !important; animation: pulseActive 1.2s infinite; }
         
         .shop-close, .ad-close, .settings-close { position: absolute; top: 14px; right: 14px; background: linear-gradient(135deg, #ff5252, #e53935); color: white; border: var(--border-width) solid var(--text-dark); width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; font-weight: bold; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 0 var(--text-dark); z-index: 100; -webkit-tap-highlight-color: transparent; }
         .shop-close:active, .ad-close:active, .settings-close:active { transform: translateY(3px); box-shadow: 0 0px 0 var(--text-dark); }
@@ -312,11 +296,6 @@
                 <div class="stat-box"><div class="stat-value" id="taps-per-click">1</div><div class="stat-label">За один клик</div></div>
                 <div class="stat-box"><div class="stat-value" id="taps-per-second">0</div><div class="stat-label">Авто-доход / сек</div></div>
             </div>
-            
-            <div class="gamemodes-bar">
-                <button class="gamemode-btn" id="mode-x2" style="display:none;">Ярость x2</button>
-                <button class="gamemode-btn" id="mode-x5" style="display:none;">Космос x5</button>
-            </div>
 
             <div class="gif-container">
                 <img src="https://gifs.obs.ru-moscow-1.hc.sbercloud.ru/fcae637ba9f2333c2348880c33f30ddb120dcf94d65bc6ec4310face52cb92db.gif" alt="ТАПАТЕЛЬ 303" id="animated-gif">
@@ -368,13 +347,6 @@
             <button class="settings-close" id="settings-close">×</button>
             <div class="settings-header">⚙️ СУПЕР НАСТРОЙКИ ИГРЫ</div>
             <div class="settings-content">
-                
-                <div class="settings-section">
-                    <div class="settings-title"><span>📺</span> Экранный режим</div>
-                    <div class="feature-section">
-                        <button class="fullscreen-toggle-btn" id="fullscreen-toggle-btn" style="width: 100%;"><span>📱</span> Включить полный экран</button>
-                    </div>
-                </div>
 
                 <div class="settings-section">
                     <div class="settings-title"><span>🔊</span> 1. Звук при тапе по Коту</div>
@@ -472,17 +444,7 @@
                 </div>
 
                 <div class="settings-section">
-                    <div class="settings-title"><span>🔒</span> 9. Замок панели множителей</div>
-                    <div class="feature-section">
-                        <div class="toggle-row">
-                            <span class="toggle-label">Заблокировать смену режима в игре</span>
-                            <input type="checkbox" id="lock-modes-toggle" style="transform: scale(1.3);">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="settings-section">
-                    <div class="settings-title"><span>💡</span> 10. Факт от Тапателя 303</div>
+                    <div class="settings-title"><span>💡</span> 9. Факт от Тапателя 303</div>
                     <div class="feature-section" id="meme-fact-container" style="font-size:0.85rem; font-weight:bold; color:#555; font-style:italic; text-align:center;">
                         Нажмите кнопку опций еще раз, чтобы сгенерировать новый факт!
                     </div>
@@ -549,7 +511,7 @@
                             <div class="color-presets">
                                 <div class="color-preset" style="background: linear-gradient(45deg, #ffff00, #ff9800);" data-gradient="true" data-colors="#ffff00,#ff9800,#ffeb3b"></div>
                                 <div class="color-preset" style="background-color: #ffeb3b;" data-color="#ffeb3b"></div>
-                                <div class="color-preset" style="background-color: #ff9800;" data-color="#ff9 orange;"></div>
+                                <div class="color-preset" style="background-color: #ff9800;" data-color="#ff9800"></div>
                                 <div class="color-preset" style="background-color: #f44336;" data-color="#f44336"></div>
                                 <div class="color-preset" style="background-color: #4caf50;" data-color="#4caf50"></div>
                             </div>
@@ -581,7 +543,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let tapCount = 0, balance = 0, tapsPerClick = 1, tapsPerSecond = 0, clickCounter = 0;
-            let autoTapperInterval = null, adTimerInterval = null, chaoticTapperInterval = null;
+            let autoTapperInterval = null, adTimerInterval = null, chaoticTapperInterval = null, specialBonusInterval = null;
             let adSeconds = 5, customMusicFile = null, customMusicUrl = null, isMusicRepeating = false;
             let customImageFile = null, customImageUrl = null, backgroundColor = "#ffff00", useGradient = true;
             let gradientColors = ["#ffff00", "#ffeb3b", "#ffc107", "#ff9800"], currentUser = null, users = {};
@@ -596,7 +558,6 @@
             const facts = [
                 "Тапатель 303 оптимизирован для запуска на мобилках за 0.01 секунды!",
                 "Если ввести секретный промокод 'mops', то прилетит очень много монет!",
-                "Режим 'Космос x5' открывается только истинным магнатам тапов.",
                 "Фоновые звуковые волны используют современный движок Web Audio API.",
                 "Сворачивание окон кнопками снизу спроектировано специально под управление большим пальцем!"
             ];
@@ -612,9 +573,11 @@
                 { id: 8, name: "⚛️ Квантовое расщепление", description: "Сила тапа ×3. Шанс 5% на внезапную материализацию монет", baseCost: 20000, cost: 20000, level: 0, maxLevel: 5, effect: "quantumFinger" },
                 { id: 9, name: "🎲 Безумный генератор", description: "Сыплет случайные монеты на счет каждые 3 секунды", baseCost: 15000, cost: 15000, level: 0, maxLevel: 8, effect: "chaoticTapper" },
                 { id: 10, name: "🚀 Реактивный бустер скорости", description: "Увеличивает общую эффективность всех авто-ботов на 25%", baseCost: 30000, cost: 30000, level: 0, maxLevel: 5, effect: "tapAccelerator" },
-                { id: 11, name: "🌌 Разблокировать режим: Ярость x2", description: "Открывает переключатель умножения кликов в главном меню!", baseCost: 100000, cost: 100000, level: 0, maxLevel: 1, effect: "unlockModeX2" },
-                { id: 12, name: "🛸 Разблокировать режим: Космос x5", description: "Открывает ультимативный множитель всех кликов в 5 раз!", baseCost: 500000, cost: 500000, level: 0, maxLevel: 1, effect: "unlockModeX5" },
-                { id: 13, name: "🧬 Мутагенная фабрика", description: "Генерирует невероятные +250 монеток в секунду пассивно", baseCost: 1000000, cost: 1000000, level: 0, maxLevel: 5, effect: "mutagenFactory" }
+                { id: 13, name: "🧬 Мутагенная фабрика", description: "Генерирует невероятные +250 монеток в секунду пассивно", baseCost: 100000, cost: 100000, level: 0, maxLevel: 5, effect: "mutagenFactory" },
+                { id: 14, name: "🐱 Сытый Кот Шаня", description: "Каждые 5 секунд подкидывает до +1000 бонусных монет в зависимости от лвла", baseCost: 150000, cost: 150000, level: 0, maxLevel: 10, effect: "fedCatBonus" },
+                { id: 15, name: "📦 Коробка с мемами", description: "Пассивный доход +50/сек и повышает шанс торнадо на +2% за уровень", baseCost: 250000, cost: 250000, level: 0, maxLevel: 5, effect: "memeBox" },
+                { id: 16, name: "🔋 Вечный генератор", description: "Увеличивает мощь вообще всех авто-кликеров на 50% за лвл!", baseCost: 600000, cost: 600000, level: 0, maxLevel: 4, effect: "eternalGenerator" },
+                { id: 17, name: "🌌 Тапательный Сингуляр", description: "Финальная точка эволюции. Сила тапа умножается на 5!", baseCost: 2500000, cost: 2500000, level: 0, maxLevel: 1, effect: "singularityBoost" }
             ];
 
             const tapCountElement = document.getElementById('tap-count'), balanceElement = document.getElementById('balance'), tapsPerClickElement = document.getElementById('taps-per-click'), tapsPerSecondElement = document.getElementById('taps-per-second'), gifElement = document.getElementById('animated-gif'), upgradesContainer = document.getElementById('upgrades-container'), notificationElement = document.getElementById('notification'), resetButton = document.getElementById('reset-button'), resetOverlay = document.getElementById('reset-overlay'), resetCancel = document.getElementById('reset-cancel'), resetConfirm = document.getElementById('reset-confirm'), adOverlay = document.getElementById('ad-overlay'), adCloseBtn = document.getElementById('ad-close'), adTimer = document.getElementById('ad-timer'), adButton = document.getElementById('ad-button'), settingsButton = document.getElementById('settings-button'), settingsOverlay = document.getElementById('settings-overlay'), settingsCloseBtn = document.getElementById('settings-close'), promoInput = document.getElementById('promo-input'), promoButton = document.getElementById('promo-button'), promoStatus = document.getElementById('promo-status'), shopButton = document.getElementById('shop-button'), shopOverlay = document.getElementById('shop-overlay'), shopClose = document.getElementById('shop-close');
@@ -624,7 +587,6 @@
             const accountButton = document.getElementById('account-button'), accountOverlay = document.getElementById('account-overlay'), accountAvatar = document.getElementById('account-avatar'), accountAvatarImg = document.getElementById('account-avatar-img'), avatarPreview = document.getElementById('avatar-preview'), avatarPreviewImg = document.getElementById('avatar-preview-img'), avatarInput = document.getElementById('avatar-input'), avatarUploadBtn = document.getElementById('avatar-upload-btn'), accountLoginForm = document.getElementById('account-login-form'), accountProfile = document.getElementById('account-profile'), loginUsername = document.getElementById('login-username'), loginPassword = document.getElementById('login-password'), loginError = document.getElementById('login-error'), loginBtn = document.getElementById('login-btn'), registerBtn = document.getElementById('register-btn'), logoutBtn = document.getElementById('logout-btn'), closeAccount = document.getElementById('close-account'), welcomeMessage = document.getElementById('welcome-message'), statTaps = document.getElementById('stat-taps'), statUpgrades = document.getElementById('stat-upgrades'), accountHeader = document.getElementById('account-header'), profileLevelVal = document.getElementById('profile-level-val');
             const imageFileInput = document.getElementById('image-file-input'), imageUploadBtn = document.getElementById('image-upload-btn'), imageRemoveBtn = document.getElementById('image-remove-btn'), imageStatus = document.getElementById('image-status');
             const repeatToggleBtn = document.getElementById('repeat-toggle-btn'), repeatIndicator = document.getElementById('repeat-indicator'), settingsMobileClose = document.getElementById('settings-mobile-close');
-            const modeX2 = document.getElementById('mode-x2'), modeX5 = document.getElementById('mode-x5');
 
             const tapSoundSelector = document.getElementById('tap-sound-selector');
             const clickerFilterSelector = document.getElementById('clicker-filter-selector');
@@ -635,7 +597,6 @@
             const vibrationToggle = document.getElementById('vibration-toggle');
             const critNotificationToggle = document.getElementById('crit-notification-toggle');
             const powerSavingToggle = document.getElementById('power-saving-toggle');
-            const lockModesToggle = document.getElementById('lock-modes-toggle');
             const memeFactContainer = document.getElementById('meme-fact-container');
 
             const tapSoundFileInput = document.getElementById('tap-sound-file-input');
@@ -643,7 +604,6 @@
             const tapSoundRemoveBtn = document.getElementById('tap-sound-remove-btn');
             const tapSoundStatus = document.getElementById('tap-sound-status');
             const customSoundOption = document.getElementById('custom-sound-option');
-            const fullscreenToggleBtn = document.getElementById('fullscreen-toggle-btn');
 
             // --- СИНТЕЗАТОР СИСТЕМНЫХ ЗВУКОВ (WEB AUDIO API) ---
             function playSystemSound(type) {
@@ -774,8 +734,7 @@
                         gradientSpeed: gradientSpeedSelector.value, tapperSize: tapperSizeSlider.value,
                         randomColor: randomTextColorToggle.checked, vibration: vibrationToggle.checked,
                         critNotif: critNotificationToggle.checked, powerSaving: powerSavingToggle.checked,
-                        lockModes: lockModesToggle.checked, backgroundColor: backgroundColor,
-                        useGradient: useGradient, musicVolume: musicVolumeSlider.value
+                        backgroundColor: backgroundColor, useGradient: useGradient, musicVolume: musicVolumeSlider.value
                     }
                 };
                 localStorage.setItem('tapatel303_save', JSON.stringify(gameSave));
@@ -783,7 +742,11 @@
 
             function loadGameProgress() {
                 const savedData = localStorage.getItem('tapatel303_save');
-                if (!savedData) { return; }
+                if (!savedData) { 
+                    updateUI();
+                    renderUpgrades();
+                    return; 
+                }
                 try {
                     const save = JSON.parse(savedData);
                     tapCount = save.tapCount || 0; balance = save.balance || 0;
@@ -809,7 +772,6 @@
                         vibrationToggle.checked = !!s.vibration;
                         critNotificationToggle.checked = s.critNotif !== false;
                         powerSavingToggle.checked = !!s.powerSaving;
-                        lockModesToggle.checked = !!s.lockModes;
                         backgroundColor = s.backgroundColor || '#ffff00';
                         useGradient = s.useGradient !== false; gradientToggle.checked = useGradient;
                         
@@ -846,7 +808,14 @@
                     repeatIndicator.className = `repeat-indicator ${isMusicRepeating ? 'active' : ''}`;
 
                     loadMediaFilesFromDB();
-                } catch (e) { console.error("Ошибка автосохранения: ", e); }
+                } catch (e) { 
+                    console.error("Ошибка автосохранения: ", e); 
+                } finally {
+                    // Исправление бага: рендерим интерфейс сразу после разбора данных сохранения
+                    updateUI();
+                    renderUpgrades();
+                    startAutoTappers();
+                }
             }
 
             function loadMediaFilesFromDB() {
@@ -942,7 +911,11 @@
                     }
                     
                     const storm = upgrades.find(u => u.effect === 'tapStorm');
-                    if (storm && storm.level > 0 && Math.random() < (0.02 * storm.level)) {
+                    let actualStormChance = 0.02 * (storm ? storm.level : 0);
+                    const memeBox = upgrades.find(u => u.effect === 'memeBox');
+                    if (memeBox) { actualStormChance += (0.02 * memeBox.level); }
+
+                    if (storm && storm.level > 0 && Math.random() < actualStormChance) {
                         addedTaps *= 10;
                         if (critNotificationToggle.checked) showNotification(`🌪️ КРИТИЧЕСКИЙ ТОРНАДО-КЛИК (x10)!`, '#ff9800');
                     }
@@ -955,9 +928,6 @@
                     
                     triggerVibration(15); playSelectedTapSound();
                 });
-
-                modeX2.addEventListener('click', () => { if(!lockModesToggle.checked) { switchMode(2, modeX2); saveGameProgress(); } else playSystemSound('error'); });
-                modeX5.addEventListener('click', () => { if(!lockModesToggle.checked) { switchMode(5, modeX5); saveGameProgress(); } else playSystemSound('error'); });
 
                 shopButton.addEventListener('click', () => { initAudioContext(); playSystemSound('open'); shopOverlay.classList.add('active'); });
                 shopClose.addEventListener('click', () => { playSystemSound('close'); shopOverlay.classList.remove('active'); });
@@ -1031,7 +1001,6 @@
                 vibrationToggle.addEventListener('change', () => { saveGameProgress(); });
                 critNotificationToggle.addEventListener('change', () => { saveGameProgress(); });
                 powerSavingToggle.addEventListener('change', () => { saveGameProgress(); });
-                lockModesToggle.addEventListener('change', () => { saveGameProgress(); });
                 
                 promoButton.addEventListener('click', () => {
                     const code = promoInput.value.trim().toLowerCase();
@@ -1048,42 +1017,21 @@
                     promoInput.value = ''; updateUI();
                 });
 
-                fullscreenToggleBtn.addEventListener('click', () => {
-                    initAudioContext(); playSystemSound('click');
-                    if (!document.fullscreenElement) {
-                        document.documentElement.requestFullscreen().then(() => {
-                            fullscreenToggleBtn.textContent = "📱 Выйти из полноэкранного";
-                        }).catch(err => { showNotification("Ошибка полноэкранного режима", "var(--danger-red)"); });
-                    } else {
-                        document.exitFullscreen().then(() => { fullscreenToggleBtn.textContent = "📱 Включить полный экран"; });
-                    }
-                });
-
                 setupCustomTapSoundControls();
                 setupAudio(); 
                 setupImageControls(); 
                 setupBackgroundControls(); 
                 setupAccountControls();
-                renderUpgrades(); 
-                startAutoTappers(); 
-                updateUI();
 
-                setInterval(saveGameProgress, 3000);
+                initIndexedDB(function() { 
+                    loadGameProgress(); 
+                });
+
+                setInterval(saveGameProgress, 4000);
             }
 
             function triggerVibration(ms) {
                 if (vibrationToggle.checked && navigator.vibrate) { navigator.vibrate(ms); }
-            }
-
-            function switchMode(mult, btnNode) {
-                playSystemSound('click');
-                activeModeMultiplier = mult;
-                document.querySelectorAll('.gamemode-btn').forEach(b => {
-                    b.classList.remove('active'); b.style.backgroundColor = ""; b.style.color = "";
-                });
-                btnNode.classList.add('active');
-                updateUI();
-                showNotification(`Режим переключен на x${mult}!`);
             }
 
             function calculateTapsPerClick() {
@@ -1093,6 +1041,10 @@
                     if (u.effect === 'multiplier') base *= (u.level > 0 ? Math.pow(2, u.level) : 1);
                     if (u.effect === 'goldenFinger') base += u.level * 5;
                 });
+                
+                const sing = upgrades.find(u => u.effect === 'singularityBoost');
+                if (sing && sing.level > 0) { base *= 5; }
+                
                 return base;
             }
 
@@ -1101,12 +1053,6 @@
                 balanceElement.textContent = Math.floor(balance);
                 tapsPerClickElement.textContent = calculateTapsPerClick() * activeModeMultiplier;
                 tapsPerSecondElement.textContent = tapsPerSecond;
-                
-                const modeX2Unlocked = upgrades.find(u => u.effect === 'unlockModeX2').level > 0;
-                const modeX5Unlocked = upgrades.find(u => u.effect === 'unlockModeX5').level > 0;
-                
-                modeX2.style.display = modeX2Unlocked ? 'inline-block' : 'none';
-                modeX5.style.display = modeX5Unlocked ? 'inline-block' : 'none';
 
                 if (currentUser && users[currentUser]) { 
                     statTaps.textContent = Math.floor(tapCount); 
@@ -1154,16 +1100,23 @@
             function startAutoTappers() {
                 if (autoTapperInterval) clearInterval(autoTapperInterval);
                 if (chaoticTapperInterval) clearInterval(chaoticTapperInterval);
+                if (specialBonusInterval) clearInterval(specialBonusInterval);
 
                 let perSec = 0;
                 upgrades.forEach(u => {
                     if (u.effect === 'autoTapper') perSec += u.level;
                     if (u.effect === 'autoTapper5') perSec += u.level * 6;
                     if (u.effect === 'mutagenFactory') perSec += u.level * 250;
+                    if (u.effect === 'memeBox') perSec += u.level * 50;
                 });
                 
                 const speedBoost = upgrades.find(u => u.effect === 'tapAccelerator');
                 if (speedBoost && speedBoost.level > 0) { perSec = Math.floor(perSec * (1 + speedBoost.level * 0.25)); }
+                
+                // Множитель от Вечного Генератора
+                const generator = upgrades.find(u => u.effect === 'eternalGenerator');
+                if (generator && generator.level > 0) { perSec = Math.floor(perSec * (1 + generator.level * 0.5)); }
+
                 tapsPerSecond = perSec;
 
                 if (perSec > 0) { 
@@ -1179,6 +1132,18 @@
                             playSystemSound('success'); showNotification(`🎲 Бонус генератора: +${bonus} монет!`, '#4caf50');
                         }
                     }, 3000); 
+                }
+
+                // Интервал для кастомного улучшения «Сытый Кот Шаня»
+                const fedCat = upgrades.find(u => u.effect === 'fedCatBonus');
+                if (fedCat && fedCat.level > 0) {
+                    specialBonusInterval = setInterval(() => {
+                        const catReward = Math.floor(Math.random() * 100 * fedCat.level);
+                        balance += catReward; tapCount += catReward; updateUI();
+                        if (catReward > 0 && critNotificationToggle.checked) {
+                            showNotification(`🐱 Кот Шаня сыт! Лови бонус: +${catReward} 🪙`, '#e8f5e9');
+                        }
+                    }, 5000);
                 }
             }
 
