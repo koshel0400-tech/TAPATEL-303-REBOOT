@@ -6,7 +6,7 @@ const ASSETS = [
   './tapatel-logo.png'
 ];
 
-// Установка воркера и кэширование файлов
+// Кэшируем файлы при установке
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -15,7 +15,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Активация и удаление старого кэша
+// Очистка старого кэша
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
@@ -26,7 +26,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Обработка запросов (работа в офлайн-режиме)
+// Работа в офлайн-режиме
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
