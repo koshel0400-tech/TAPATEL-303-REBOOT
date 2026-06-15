@@ -4,8 +4,8 @@
   "description": "Легендарный кликер перезагрузка",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#fff9c4",
-  "theme_color": "#ffeb3b",
+  "background_color": "#1a1aff",
+  "theme_color": "#1a1aff",
   "orientation": "portrait",
   "icons": [
     {
@@ -20,4 +20,3 @@
     }
   ]
 }
-
