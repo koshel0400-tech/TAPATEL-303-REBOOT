@@ -1,3 +1,12 @@
+{
+  "name": "ТАПАТЕЛЬ 303 REBOOT",
+  "short_name": "Тапатель 303",
+  "description": "Легендарный кликер перезагрузка",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff9c4",
+  "theme_color": "#ffeb3b",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "tapatel-logo.png",
@@ -9,4 +18,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
+  ]
+}
+
