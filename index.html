@@ -1318,5 +1318,17 @@
             initGame();
         });
     </script>
+    <!-- Скрипт регистрации Service Worker для установки кликера -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+ 
+        .then(reg => console.log('Установка PWA доступна!'))
+        .catch(err => console.log('Ошибка PWA:', err));
+    });
+  }
+</script>
+
 </body>
 </html>
